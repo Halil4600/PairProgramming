@@ -1,11 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <title>Music Records</title>
 </head>
+
 <body>
-    
+    <h2>get all Records</h2>
+    <div id="app">
+        <ul>
+            <button id="getAllButton" v-on:click="getAllRecords" class="btn btn-primary">
+                <i class="fas fa-Records"></i> Get all Records
+            </button>
+            <ul>
+                <li>
+                    <div v-for="record in records" :key="record.id">
+                        <p> Id: {{records.Id}}</p>
+                        <p>Title: {{ records.Title }}</p>
+                        <p>Artist: {{ records.Artist }}</p>
+                        <p>Duration: {{ records.Duration }}</p>
+                        <p>PublicationYear: {{ records.PublicationYear }}</p>
+
+
+
+                    </div>
+                </li>
+            </ul>
+    </div>
+
+            <script src="index.js" defer></script>
 </body>
+
 </html>
